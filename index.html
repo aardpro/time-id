@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>timeId Demo</title>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <div class="flex-start gap-4 p-4">
+        <div class="w-60">
+          <div>
+            当前时间戳
+          </div>
+          <div>
+            current timestamp
+          </div>
+        </div>
+        <div id="timestamp"></div>
+      </div>
+      <div class="flex-start gap-4 p-4">
+        <div class="w-60">
+          time id
+        </div>
+        <div id="timeid"></div>
+      </div>
+    </div>
+    <div>
+      <div class="flex-start gap-4 p-4" style="align-items: flex-start;">
+        <div>
+          <div class="py-2">
+            <div class="w-60">数量 | count</div>
+            <input type="number" id="count" class="w-20 ml-2 p-2" value="100" min="0" max="1000" step="100" />
+          </div>
+          <div class="py-2">
+            <div class="w-60">后缀长度 | suffix length</div>
+            <input type="number" id="suffix" class="w-20 ml-2 p-2" value="3" min="0" max="10" step="1" />
+          </div>
+          <div class="py-2">
+            <button id="btn">
+              批量生产 | Batch Generate
+            </button>
+          </div>
+        </div>
+        <div id="result" style="display:flex;flex-wrap:wrap;align-content: flex-start; gap:1rem">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
