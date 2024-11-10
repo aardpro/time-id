@@ -1,5 +1,5 @@
 import "./style.css";
-import timeId from "./package-entry";
+import { timeId } from "./package-entry";
 
 window.onload = async () => {
   const timestampEl = document.getElementById(
@@ -20,11 +20,16 @@ window.onload = async () => {
   }, 1000);
 
   btn.addEventListener("click", () => {
-    const ids = []
-    const suffixLength = Number(suffixEl.value)
-    for(let i=0;i<Number(countEl.value);i++){
-      ids.push(timeId(suffixLength))
+    const ids = [];
+    const suffixLength = Number(suffixEl.value);
+    for (let i = 0; i < Number(countEl.value); i++) {
+      ids.push(timeId(suffixLength));
     }
-    resultEl.innerHTML = ids.map((id) => `<div style="padding: 4px;background-color: #f0f0f0">${id}</div>`).join('')
-  })
+    resultEl.innerHTML = ids
+      .map(
+        (id) =>
+          `<div style="padding: 4px;background-color: #f0f0f0">${id}</div>`
+      )
+      .join("");
+  });
 };

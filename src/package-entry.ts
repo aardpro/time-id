@@ -72,7 +72,7 @@ function toBase26(num: number, length = 0): string {
  * If the accumulator function is not provided, the myAccumulator function is used.
  * @returns {string} the generated unique id string.
  */
-function timeId(suffixLength = 3, accumulator = myAccumulator): string {
+export function timeId(suffixLength = 3, accumulator = myAccumulator): string {
   const num = Date.now();
   const id = toBase26(num);
   if (suffixLength < 1 || typeof accumulator !== "function") {
@@ -107,5 +107,3 @@ export async function timeIdAsync(
   const suffix = seq.toString().padStart(suffixLength, "0");
   return `${id}${suffix}`;
 }
-
-export default timeId;

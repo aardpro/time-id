@@ -3,7 +3,7 @@
 ## es module
 
 ```js
-import timeId from "aardpro-time-id";
+import { timeId } from "aardpro-time-id";
 
 const id = timeId();
 ```
@@ -11,7 +11,7 @@ const id = timeId();
 ## commonjs
 
 ```js
-const timeId = require("aardpro-time-id");
+const { timeId } = require("aardpro-time-id");
 
 const id = timeId();
 ```
