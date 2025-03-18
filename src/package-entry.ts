@@ -78,7 +78,7 @@ export function timeId(suffixLength = 3, accumulator = myAccumulator): string {
   if (suffixLength < 1 || typeof accumulator !== "function") {
     return id;
   }
-  const suffix = accumulator(num).toString().padStart(suffixLength, "0");
+  const suffix = toBase26(myAccumulator(num), suffixLength);
   return `${id}${suffix}`;
 }
 
@@ -104,6 +104,6 @@ export async function timeIdAsync(
     return id;
   }
   const seq = await accumulatorAsync(num);
-  const suffix = seq.toString().padStart(suffixLength, "0");
+  const suffix = toBase26(seq, suffixLength);
   return `${id}${suffix}`;
 }
